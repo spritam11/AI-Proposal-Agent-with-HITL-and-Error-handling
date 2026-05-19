@@ -185,7 +185,11 @@ Send Error Details to Engineer
 ✅ Automated PPT creation  
 ✅ Node-level error monitoring  
 ✅ Approval-based email delivery  
-✅ Production-oriented workflow design  
+✅ Production-oriented workflow design 
+# 🎥 Full Workflow Demo
+
+[Watch Full Workflow Demo](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/372b172cf02c6d7be687b97e0931cd1861f18160/lv_0_20260517223244.mp4)
+
 
 # 🎯 Focus
 
