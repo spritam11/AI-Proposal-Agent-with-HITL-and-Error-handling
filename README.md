@@ -122,7 +122,7 @@ Send Final Email to Client
 
 ## Human Approval System
 
-![Approval](screenshots/approval-system.jpg)
+![Approval](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/f732de49c745220ad7c13e70b61b45b859474bae/IMG-20260517-WA0011.jpg)
 
 ---
 
