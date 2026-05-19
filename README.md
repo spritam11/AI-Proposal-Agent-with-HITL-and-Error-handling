@@ -187,11 +187,11 @@ Send Error Details to Engineer
 ✅ Approval-based email delivery  
 ✅ Production-oriented workflow design 
 
-# 🎥 Full Workflow Demo / click on raw
+# 🎥 Full Workflow Demo / click on view raw
 
 [Watch Full Workflow Demo](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/372b172cf02c6d7be687b97e0931cd1861f18160/lv_0_20260517223244.mp4)
 
-# 🎥 Error handling demo / click on raw
+# 🎥 Error handling demo / click on view raw
 
 [Watch Error handling Demo](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/da04cb22c17243ffbee68a570bd439a8edd353c4/lv_0_20260519214744.mp4)
 
