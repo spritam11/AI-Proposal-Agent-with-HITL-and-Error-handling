@@ -189,7 +189,7 @@ Send Error Details to Engineer
 
 # 🎥 Full Workflow Demo / click on view raw
 
-[Watch Full Workflow Demo](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/372b172cf02c6d7be687b97e0931cd1861f18160/lv_0_20260517223244.mp4)
+[Watch Full Workflow Demo](https://github.com/user-attachments/assets/7d8f47c2-a438-4335-899d-98b1af89ef77)
 
 # 🎥 Error handling demo / click on view raw
 
