@@ -116,7 +116,7 @@ Send Final Email to Client
 
 ## Full Workflow
 
-![Workflow](screenshots/full-workflow.jpg)
+![Workflow](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/a6274e38380cfeb972a163a6b11334cd1abf07e8/IMG-20260517-WA0012.jpg)
 
 ---
 
