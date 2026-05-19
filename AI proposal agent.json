@@ -1,0 +1,595 @@
+{
+  "name": "AI proposal agent",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Proposal Form",
+        "formDescription": "This AI agent wiil create a dyanmic proposal ppt for the clients and also sent email to the client",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "First Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Last Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Website",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Problem",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Solution",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Cost ",
+              "fieldType": "number"
+            },
+            {
+              "fieldLabel": "Scope"
+            },
+            {
+              "fieldLabel": "Email"
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": true,
+          "respondWithOptions": {
+            "values": {}
+          },
+          "ignoreBots": true,
+          "customCss": ":root {\n\n  /* Typography */\n  --font-family: 'Inter', 'Segoe UI', sans-serif;\n\n  --font-weight-normal: 400;\n  --font-weight-medium: 500;\n  --font-weight-bold: 600;\n\n  --font-size-body: 14px;\n  --font-size-label: 14px;\n  --font-size-input: 15px;\n  --font-size-header: 28px;\n  --font-size-subheader: 16px;\n  --font-size-link: 13px;\n  --font-size-error: 12px;\n\n  --font-size-html-h1: 36px;\n  --font-size-html-h2: 28px;\n  --font-size-html-h3: 22px;\n  --font-size-html-h4: 18px;\n  --font-size-html-h5: 16px;\n  --font-size-html-h6: 14px;\n\n  /* Colors */\n  --color-background: #0f172a;\n  --color-surface: rgba(15, 23, 42, 0.7);\n  --color-card-bg: rgba(17, 25, 40, 0.75);\n\n  --color-card-border: rgba(255, 255, 255, 0.08);\n  --color-card-shadow: rgba(0, 0, 0, 0.35);\n\n  --color-header: #f8fafc;\n  --color-header-subtext: #94a3b8;\n\n  --color-label: #cbd5e1;\n\n  --color-input-bg: rgba(255, 255, 255, 0.04);\n  --color-input-border: rgba(255, 255, 255, 0.08);\n  --color-input-text: #f1f5f9;\n  --color-placeholder: rgba(241, 245, 249, 0.45);\n\n  --color-focus-border: #10a37f;\n  --color-focus-shadow: rgba(16, 163, 127, 0.35);\n\n  --color-submit-btn-bg: #10a37f;\n  --color-submit-btn-hover: #0d8c6d;\n  --color-submit-btn-text: #ffffff;\n\n  --color-link: #10a37f;\n\n  --color-error: #ef4444;\n  --color-required: #ef4444;\n\n  --color-clear-button-bg: #334155;\n\n  --color-html-text: #e2e8f0;\n  --color-html-link: #10a37f;\n\n  /* Border Radius */\n  --border-radius-card: 20px;\n  --border-radius-input: 14px;\n  --border-radius-button: 14px;\n  --border-radius-clear-btn: 50%;\n\n  /* Spacing */\n  --padding-container-top: 40px;\n\n  --padding-card: 32px;\n\n  --padding-form-input: 14px 16px;\n\n  --margin-bottom-card: 24px;\n\n  /* Dimensions */\n  --container-width: 460px;\n\n  --submit-btn-height: 52px;\n\n  --checkbox-size: 18px;\n\n  /* Effects */\n  --backdrop-blur: blur(18px);\n\n  --box-shadow-card:\n    0 8px 32px rgba(0, 0, 0, 0.35);\n\n  --transition-speed: 0.25s ease;\n}\n\n\n/* GLOBAL BODY */\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: var(--font-family);\n  background:\n    radial-gradient(circle at top left, #1e293b 0%, #0f172a 40%),\n    radial-gradient(circle at bottom right, #111827 0%, #020617 60%);\n  min-height: 100vh;\n  color: var(--color-html-text);\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n\n/* CARD */\n\n.card {\n  width: 100%;\n  max-width: var(--container-width);\n\n  background: var(--color-card-bg);\n\n  border: 1px solid var(--color-card-border);\n\n  backdrop-filter: var(--backdrop-blur);\n\n  border-radius: var(--border-radius-card);\n\n  box-shadow: var(--box-shadow-card);\n\n  padding: var(--padding-card);\n\n  transition: transform var(--transition-speed);\n}\n\n.card:hover {\n  transform: translateY(-2px);\n}\n\n\n/* HEADER */\n\n.card h1 {\n  margin: 0 0 10px;\n  font-size: var(--font-size-header);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-header);\n}\n\n.card p {\n  margin: 0 0 24px;\n  color: var(--color-header-subtext);\n  font-size: var(--font-size-subheader);\n  line-height: 1.6;\n}\n\n\n/* LABEL */\n\nlabel {\n  display: block;\n  margin-bottom: 8px;\n\n  font-size: var(--font-size-label);\n\n  font-weight: var(--font-weight-medium);\n\n  color: var(--color-label);\n}\n\n\n/* INPUT */\n\ninput,\ntextarea,\nselect {\n  width: 100%;\n\n  padding: var(--padding-form-input);\n\n  background: var(--color-input-bg);\n\n  border: 1px solid var(--color-input-border);\n\n  border-radius: var(--border-radius-input);\n\n  color: var(--color-input-text);\n\n  font-size: var(--font-size-input);\n\n  outline: none;\n\n  transition:\n    border-color var(--transition-speed),\n    box-shadow var(--transition-speed),\n    background var(--transition-speed);\n\n  box-sizing: border-box;\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  color: var(--color-placeholder);\n}\n\ninput:focus,\ntextarea:focus,\nselect:focus {\n  border-color: var(--color-focus-border);\n\n  box-shadow:\n    0 0 0 4px var(--color-focus-shadow);\n\n  background: rgba(255, 255, 255, 0.06);\n}\n\n\n/* BUTTON */\n\nbutton {\n  width: 100%;\n\n  height: var(--submit-btn-height);\n\n  border: none;\n\n  border-radius: var(--border-radius-button);\n\n  background: var(--color-submit-btn-bg);\n\n  color: var(--color-submit-btn-text);\n\n  font-size: 15px;\n\n  font-weight: var(--font-weight-bold);\n\n  cursor: pointer;\n\n  transition:\n    background var(--transition-speed),\n    transform var(--transition-speed),\n    box-shadow var(--transition-speed);\n\n  margin-top: 18px;\n}\n\nbutton:hover {\n  background: var(--color-submit-btn-hover);\n\n  transform: translateY(-1px);\n\n  box-shadow:\n    0 8px 20px rgba(16, 163, 127, 0.25);\n}\n\nbutton:active {\n  transform: scale(0.98);\n}\n\n\n/* LINKS */\n\na {\n  color: var(--color-link);\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\n\n/* ERROR */\n\n.error {\n  color: var(--color-error);\n  font-size: var(--font-size-error);\n  margin-top: 6px;\n}\n\n\n/* RESPONSIVE */\n\n@media (max-width: 520px) {\n\n  .card {\n    margin: 16px;\n    padding: 24px;\n  }\n\n  .card h1 {\n    font-size: 24px;\n  }\n\n}"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -336,
+        -96
+      ],
+      "id": "a02faf89-c999-4300-9c6e-5503e76bf9ad",
+      "name": "On form submission",
+      "webhookId": "ee09c2d8-5490-496e-933d-ddb7bdb7faf0"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        176
+      ],
+      "id": "ab415ded-04cc-4499-8d9a-2e2222c69f28",
+      "name": "Groq Chat Model1",
+      "credentials": {
+        "groqApi": {
+          "id": "DS1US3DE8JJLG56g",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1v-9nbpxyx08AJiG5JyrmXitn9N_6g6Z1WKEBwW9tg4I",
+          "mode": "list",
+          "cachedResultName": "Proposal",
+          "cachedResultUrl": "https://docs.google.com/presentation/d/1v-9nbpxyx08AJiG5JyrmXitn9N_6g6Z1WKEBwW9tg4I/edit?usp=drivesdk"
+        },
+        "name": "=Proposal for {{ $('On form submission').item.json['Company Name'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        400,
+        -96
+      ],
+      "id": "d2e205a0-4aae-41da-a648-b6f72e5df7e4",
+      "name": "Copy file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "oBMw8M5GOwhL4nAQ",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=\n  \"clientName\":{{ $json['First Name'] }}\n  \"website\": {{ $json.Website }}\n  \"problem\": {{ $json.Problem }}\n  \"solution\": {{ $json.Solution }}\n  \"scope\": \"{{ $json.Scope }}\n  \"email\": \"{{ $json.Email }}\n}",
+        "options": {
+          "systemMessage": "=You are a professional proposal generation AI.\n\nReturn ONLY valid JSON.\n\nRules:\n- No markdown\n- No explanations\n- No extra text\n- Keep descriptions concise\n- Professional business tone\n\nYou must return ALL fields.\n\nOutput schema:\n\n{\n  \"proposalTitle\": \"\",\n  \"clientName\": \"\",\n  \"description\": \"\",\n  \"problem\": \"\",\n\n  \"solution\": \"\",\n \n\n  \"scope1\": \"\",\n  \"scope2\": \"\",\n  \"scope3\": \"\",\n\n  \"email\": \"\",\n  \"website\": \"\",\n\n  \"thankyouClient\": \"\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -160,
+        -80
+      ],
+      "id": "87706d72-a792-42d5-852b-4a89b9a2f540",
+      "name": "AI Agent",
+      "notesInFlow": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $json.output;\n\nconst parsed = JSON.parse(raw);\n\nreturn [\n  {\n    json: parsed\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -96
+      ],
+      "id": "d5a9b5d6-2f3d-494b-8e04-a278aae0d1e7",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "replaceText",
+        "presentationId": "={{ $json.id }}",
+        "textUi": {
+          "textValues": [
+            {
+              "matchCase": true,
+              "text": "{{Proposal Title}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.proposalTitle }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{client Name}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.clientName }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{Description}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.description }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{Problem}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.problem }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{Solution}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.solution }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{scope1}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.scope1 }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{scope2}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.scope2 }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{scope3}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.scope3 }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{Email}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.email }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{website}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.website }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{Client Name}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.clientName }}"
+            },
+            {
+              "matchCase": true,
+              "text": "{{email}}",
+              "replaceText": "={{ $('Code in JavaScript').item.json.email }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        608,
+        -96
+      ],
+      "id": "da47fb0a-9d48-44ec-9ba9-a8811191db27",
+      "name": "Replace text in a presentation",
+      "credentials": {
+        "googleSlidesOAuth2Api": {
+          "id": "YnOqUWSsW5BqXS1G",
+          "name": "Google Slides account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "48616fb7-eef9-42df-ba7e-3a0afee4c350",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1120,
+        -112
+      ],
+      "id": "cd12e168-c2a1-4f0b-9396-3441bf858690",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "spritam0511@gmail.com",
+        "subject": "Needs approvel before sending to client",
+        "message": "=<div style=\"font-family: Arial, sans-serif; background:#f4f4f7; padding:40px 20px;\">\n\n  <div style=\"max-width:600px; margin:auto; background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08);\">\n\n    <div style=\"background:#111827; padding:30px; text-align:center;\">\n      <h1 style=\"color:white; margin:0; font-size:28px;\">\n        Proposal Ready\n      </h1>\n    </div>\n\n    <div style=\"padding:35px; color:#333; line-height:1.7;\">\n\n      <p style=\"font-size:18px; margin-top:0;\">\n        Hey {{ $('On form submission').item.json['First Name'] }},\n      </p>\n\n      <p>\n        Thanks again for your time today.\n      </p>\n\n      <p>\n        I’ve prepared the proposal based on our discussion.  \n        You can review it using the button below.\n      </p>\n\n      <div style=\"text-align:center; margin:35px 0;\">\n        <a \n          href=\"https://docs.google.com/presentation/d/{{ $('Replace text in a presentation').item.json.presentationId }}/edit\"\n          style=\"\n            background:#111827;\n            color:white;\n            padding:14px 28px;\n            text-decoration:none;\n            border-radius:10px;\n            display:inline-block;\n            font-weight:bold;\n            font-size:16px;\n          \"\n        >\n          View Proposal\n        </a>\n      </div>\n\n      <p>\n        Let me know your thoughts or if you'd like any revisions.\n      </p>\n\n      <p style=\"margin-top:40px;\">\n        Best Regards,<br>\n        <strong>Pritam Sharma</strong>\n      </p>\n\n    </div>\n\n    <div style=\"background:#f9fafb; padding:18px; text-align:center; font-size:12px; color:#888;\">\n      This email was sent automatically via n8n\n    </div>\n\n  </div>\n\n</div>",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "=✅Approve",
+            "disapproveLabel": "=❌Not good"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        864,
+        -112
+      ],
+      "id": "637311b8-8d6f-4b23-99b4-5f6f56627cde",
+      "name": "Approvel to send Email",
+      "webhookId": "f7657edd-4651-4a52-a769-32821062bb08",
+      "retryOnFail": false,
+      "alwaysOutputData": false,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "p6EAkwUaf7XzWlpn",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.Email }}",
+        "subject": "=Proposal for  {{ $('On form submission').item.json['Company Name'] }}",
+        "message": "=<div style=\"font-family: Arial, sans-serif; background:#f4f4f7; padding:40px 20px;\">\n\n  <div style=\"max-width:600px; margin:auto; background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08);\">\n\n    <div style=\"background:#111827; padding:30px; text-align:center;\">\n      <h1 style=\"color:white; margin:0; font-size:28px;\">\n        Proposal Ready\n      </h1>\n    </div>\n\n    <div style=\"padding:35px; color:#333; line-height:1.7;\">\n\n      <p style=\"font-size:18px; margin-top:0;\">\n        Hey {{ $('On form submission').item.json['First Name'] }},\n      </p>\n\n      <p>\n        Thanks again for your time today.\n      </p>\n\n      <p>\n        I’ve prepared the proposal based on our discussion.  \n        You can review it using the button below.\n      </p>\n\n      <div style=\"text-align:center; margin:35px 0;\">\n        <a \n          href=\"https://docs.google.com/presentation/d/{{ $('Replace text in a presentation').item.json.presentationId }}/edit\"\n          style=\"\n            background:#111827;\n            color:white;\n            padding:14px 28px;\n            text-decoration:none;\n            border-radius:10px;\n            display:inline-block;\n            font-weight:bold;\n            font-size:16px;\n          \"\n        >\n          View Proposal\n        </a>\n      </div>\n\n      <p>\n        Let me know your thoughts or if you'd like any revisions.\n      </p>\n\n      <p style=\"margin-top:40px;\">\n        Best Regards,<br>\n        <strong>Pritam Sharma</strong>\n      </p>\n\n    </div>\n\n    <div style=\"background:#f9fafb; padding:18px; text-align:center; font-size:12px; color:#888;\">\n      This email was sent automatically via n8n\n    </div>\n\n  </div>\n\n</div>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1152,
+        384
+      ],
+      "id": "f6abe8f1-9f76-48f1-8c6d-3cdcc6579517",
+      "name": "Send email to client",
+      "webhookId": "ab970b54-0bdc-411a-8b3c-942cb4ab950d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "p6EAkwUaf7XzWlpn",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=1618928605",
+        "text": "=Hey You got this error in your AI proposal agent Please in AI AGENT NODE Fix this\n\nTHE ERROR:\n\n{{ $json.error }}  ",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        480,
+        960
+      ],
+      "id": "542449a5-bef5-49c4-8eea-9bd9ea433f6c",
+      "name": "Send a text message",
+      "webhookId": "934f7d52-ea61-4b72-a5f6-9ee6d7b60b3d",
+      "credentials": {
+        "telegramApi": {
+          "id": "xHl3rAH4VmU7Xmhl",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=1618928605",
+        "text": "=Hey You got this error in your AI proposal agent Please in  Google drive node[COPY FILE] Fix this\n\nTHE ERROR:\n\n{{ $json.error }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        736,
+        976
+      ],
+      "id": "67db1345-c783-4575-8938-7440ab56c635",
+      "name": "Send a text message1",
+      "webhookId": "934f7d52-ea61-4b72-a5f6-9ee6d7b60b3d",
+      "credentials": {
+        "telegramApi": {
+          "id": "xHl3rAH4VmU7Xmhl",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=1618928605",
+        "text": "=Hey You got this error in your AI proposal agent  in  Google slides node  Please Fix this\n\nTHE ERROR:\n{{ $json.error }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        176,
+        960
+      ],
+      "id": "de3bd007-92bd-4b3b-a572-20c1fd57c747",
+      "name": "Send a text message2",
+      "webhookId": "934f7d52-ea61-4b72-a5f6-9ee6d7b60b3d",
+      "credentials": {
+        "telegramApi": {
+          "id": "xHl3rAH4VmU7Xmhl",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Sending alert to AI AUTOMATION ENGINEER if any error occurs           ",
+        "height": 416,
+        "width": 992
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        96,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "ee11c8fc-acff-4b1b-8e0e-0a547938c949",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "##    Sending Approvel Before sending to the client                                                                                                                                                                                                                                                                                                                                                     ",
+        "height": 272,
+        "width": 304
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        784,
+        -208
+      ],
+      "typeVersion": 1,
+      "id": "466eea7e-e5a3-4528-b2e6-5740fbb5fcf0",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## AI PROPOSAL AGENT",
+        "height": 1456,
+        "width": 1920,
+        "color": "#525252"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        -240
+      ],
+      "typeVersion": 1,
+      "id": "e745d255-7df0-43ed-9be7-a2b0dc0cfb63",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Handling errors\n",
+        "width": 304,
+        "color": "#FFFFFF"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        96,
+        608
+      ],
+      "typeVersion": 1,
+      "id": "b84d14a4-757d-4ac1-b17b-b472a4bac362",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Copy file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Copy file": {
+      "main": [
+        [
+          {
+            "node": "Replace text in a presentation",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace text in a presentation": {
+      "main": [
+        [
+          {
+            "node": "Approvel to send Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send email to client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approvel to send Email": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email to client": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c04259e7-992b-4008-bcb1-c7e069c99553",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "35b69167c80483ad50a78ff3e1e4e72f27b84bfcdac156c6a7f5cd1d64078ec1"
+  },
+  "id": "0XcRQXBqHj8EdtD8",
+  "tags": []
+}
