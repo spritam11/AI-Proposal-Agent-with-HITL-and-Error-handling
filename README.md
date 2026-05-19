@@ -134,7 +134,7 @@ Send Final Email to Client
 
 ## Telegram Alert System
 
-![Telegram Alerts](screenshots/telegram-alerts.jpg)
+![Telegram Alerts](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/e65cb39345667eccf69fafad67dee998cb123e33/IMG-20260517-WA0010.jpg)
 
 ---
 
