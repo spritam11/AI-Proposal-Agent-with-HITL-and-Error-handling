@@ -1,1 +1,208 @@
-# AI-Proposal-Agent-with-HITL-and-Error-handling
+<h1 align="center">🚀 AI Proposal Agent with Human Approval & Error Handling</h1>
+
+<p align="center">
+AI-powered automation workflow for proposal generation, approval-based email delivery, and intelligent error monitoring.
+</p>
+
+---
+
+# 📌 Problem
+
+Businesses and agencies waste significant time manually:
+
+- Creating proposal presentations
+- Sending emails to leads
+- Managing approval workflows
+- Monitoring workflow failures
+- Tracking automation errors
+
+Manual proposal generation slows down lead response time and increases operational overhead.
+
+---
+
+# 💡 Solution
+
+This AI-powered automation system automatically:
+
+✅ Generates proposal content using AI  
+✅ Creates presentation files dynamically  
+✅ Stores generated assets in Google Drive  
+✅ Updates Google Slides presentations  
+✅ Sends approval request emails before client delivery  
+✅ Waits for human approval/decline decision  
+✅ Sends finalized proposal email to client  
+✅ Detects workflow errors automatically  
+✅ Alerts AI Automation Engineer instantly with node-level error details
+
+---
+
+# ⚙️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| n8n | Workflow Automation |
+| Groq Chat Model | AI Proposal Generation |
+| Google Drive API | File Storage |
+| Google Slides API | Dynamic PPT Generation |
+| Gmail API | Email Delivery & Approval Workflow |
+| Telegram Bot API | Error Alert System |
+
+---
+
+# 🧠 Key Features
+
+## 🤖 AI Proposal Generation
+Automatically generates proposal content using AI models.
+
+---
+
+## 📊 Dynamic PPT Generation
+Creates and updates Google Slides presentations automatically.
+
+---
+
+## 👨‍💻 Human-in-the-Loop Approval System
+
+Before sending the final email to the client:
+
+- Approval request is sent
+- Generated PPT is attached
+- Human can:
+  - ✅ Approve
+  - ❌ Decline
+
+Only after approval, the workflow sends the proposal to the client.
+
+---
+
+## 🚨 Intelligent Error Handling System
+
+If any workflow node fails:
+
+- AI Automation Engineer gets notified instantly
+- Telegram alert is triggered
+- Error details include:
+  - Failed node name
+  - Type of error
+  - Workflow failure information
+
+This improves reliability and debugging speed.
+
+---
+
+# 🔄 Workflow Architecture
+
+```text
+Lead Form Submission
+        ↓
+AI Proposal Generation
+        ↓
+JavaScript Processing
+        ↓
+Google Drive File Handling
+        ↓
+Google Slides PPT Generation
+        ↓
+Approval Request Email
+        ↓
+Human Approval / Decline
+        ↓
+Send Final Email to Client
+```
+
+---
+
+# 🖼️ Workflow Screenshots
+
+## Full Workflow
+
+![Workflow](screenshots/full-workflow.jpg)
+
+---
+
+## Human Approval System
+
+![Approval](screenshots/approval-system.jpg)
+
+---
+
+## Error Handling Workflow
+
+![Error Handling](screenshots/error-handling.jpg)
+
+---
+
+## Telegram Alert System
+
+![Telegram Alerts](screenshots/telegram-alerts.jpg)
+
+---
+
+# 📬 Human Approval Flow
+
+```text
+Generated Proposal
+        ↓
+Approval Email Sent
+        ↓
+Human Reviews Proposal
+        ↓
+Approve / Decline Decision
+        ↓
+Final Client Delivery
+```
+
+---
+
+# 🚨 Error Monitoring Flow
+
+```text
+Node Failure
+        ↓
+Capture Error Information
+        ↓
+Trigger Telegram Alert
+        ↓
+Send Error Details to Engineer
+```
+
+---
+
+# 📈 Real-World Use Cases
+
+- Agency Proposal Automation
+- Client Onboarding Systems
+- Sales Workflow Automation
+- AI-Based Business Operations
+- Lead Response Automation
+
+---
+
+# 🔥 Highlights
+
+✅ Human-in-the-loop architecture  
+✅ AI-generated proposals  
+✅ Automated PPT creation  
+✅ Node-level error monitoring  
+✅ Approval-based email delivery  
+✅ Production-oriented workflow design  
+
+---
+
+# 📂 Project Structure
+
+```bash
+AI-Proposal-Agent/
+│
+├── screenshots/
+├── workflow/
+├── assets/
+├── docs/
+└── README.md
+```
+
+---
+
+# 🎯 Focus
+
+Designed for scalable business automation workflows with reliability, approval control, and operational monitoring.
