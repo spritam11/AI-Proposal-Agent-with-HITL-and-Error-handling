@@ -1,4 +1,4 @@
-<h1 align="center">🚀 AI Proposal Agent with Human Approval & Error Handling</h1>
+<h1 align="center"> AI Proposal Agent with Human Approval & Error Handling</h1>
 
 <p align="center">
 AI-powered automation workflow for proposal generation, approval-based email delivery, and intelligent error monitoring.
@@ -6,7 +6,7 @@ AI-powered automation workflow for proposal generation, approval-based email del
 
 ---
 
-# 📌 Problem
+#  Problem
 
 Businesses and agencies waste significant time manually:
 
@@ -36,7 +36,7 @@ This AI-powered automation system automatically:
 
 ---
 
-# ⚙️ Tech Stack
+# Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -49,9 +49,9 @@ This AI-powered automation system automatically:
 
 ---
 
-# 🧠 Key Features
+#  Key Features
 
-## 🤖 AI Proposal Generation
+## AI Proposal Generation
 Automatically generates proposal content using AI models.
 
 ---
@@ -75,7 +75,7 @@ Only after approval, the workflow sends the proposal to the client.
 
 ---
 
-## 🚨 Intelligent Error Handling System
+## Intelligent Error Handling System
 
 If any workflow node fails:
 
@@ -112,7 +112,7 @@ Send Final Email to Client
 
 ---
 
-# 🖼️ Workflow Screenshots
+#  Workflow Screenshots
 
 ## Full Workflow
 
@@ -138,7 +138,7 @@ Send Final Email to Client
 
 ---
 
-# 📬 Human Approval Flow
+#  Human Approval Flow
 
 ```text
 Generated Proposal
@@ -154,7 +154,7 @@ Final Client Delivery
 
 ---
 
-# 🚨 Error Monitoring Flow
+#  Error Monitoring Flow
 
 ```text
 Node Failure
@@ -178,7 +178,7 @@ Send Error Details to Engineer
 
 ---
 
-# 🔥 Highlights
+# Highlights
 
 ✅ Human-in-the-loop architecture  
 ✅ AI-generated proposals  
@@ -187,15 +187,15 @@ Send Error Details to Engineer
 ✅ Approval-based email delivery  
 ✅ Production-oriented workflow design 
 
-# 🎥 Full Workflow Demo 
+# Full Workflow Demo 
 
 [Watch Full Workflow Demo](https://github.com/user-attachments/assets/7d8f47c2-a438-4335-899d-98b1af89ef77)
 
-# 🎥 Error handling demo
+# Error handling demo
 
 [Watch Error handling Demo](https://github.com/user-attachments/assets/af9582e4-d27e-4a48-9162-aa3c8d00befb)
 
 
-# 🎯 Focus
+# Focus
 
 Designed for scalable business automation workflows with reliability, approval control, and operational monitoring.
