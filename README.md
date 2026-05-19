@@ -187,13 +187,13 @@ Send Error Details to Engineer
 ✅ Approval-based email delivery  
 ✅ Production-oriented workflow design 
 
-# 🎥 Full Workflow Demo / click on view raw
+# 🎥 Full Workflow Demo 
 
 [Watch Full Workflow Demo](https://github.com/user-attachments/assets/7d8f47c2-a438-4335-899d-98b1af89ef77)
 
-# 🎥 Error handling demo / click on view raw
+# 🎥 Error handling demo
 
-[Watch Error handling Demo](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/da04cb22c17243ffbee68a570bd439a8edd353c4/lv_0_20260519214744.mp4)
+[Watch Error handling Demo](https://github.com/user-attachments/assets/af9582e4-d27e-4a48-9162-aa3c8d00befb)
 
 
 # 🎯 Focus
