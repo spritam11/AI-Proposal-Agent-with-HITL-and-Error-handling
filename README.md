@@ -128,7 +128,7 @@ Send Final Email to Client
 
 ## Error Handling Workflow
 
-![Error Handling](screenshots/error-handling.jpg)
+![Error Handling](https://github.com/spritam11/AI-Proposal-Agent-with-HITL-and-Error-handling/blob/8e86aa7963f22b7ac3eb0c1bd60271c4da50552c/IMG-20260517-WA0013.jpg)
 
 ---
 
