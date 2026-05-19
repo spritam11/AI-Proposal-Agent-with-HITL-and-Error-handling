@@ -56,12 +56,12 @@ Automatically generates proposal content using AI models.
 
 ---
 
-## 📊 Dynamic PPT Generation
+##  Dynamic PPT Generation
 Creates and updates Google Slides presentations automatically.
 
 ---
 
-## 👨‍💻 Human-in-the-Loop Approval System
+##  Human-in-the-Loop Approval System
 
 Before sending the final email to the client:
 
@@ -90,7 +90,7 @@ This improves reliability and debugging speed.
 
 ---
 
-# 🔄 Workflow Architecture
+#  Workflow Architecture
 
 ```text
 Lead Form Submission
