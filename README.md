@@ -187,22 +187,6 @@ Send Error Details to Engineer
 ✅ Approval-based email delivery  
 ✅ Production-oriented workflow design  
 
----
-
-# 📂 Project Structure
-
-```bash
-AI-Proposal-Agent/
-│
-├── screenshots/
-├── workflow/
-├── assets/
-├── docs/
-└── README.md
-```
-
----
-
 # 🎯 Focus
 
 Designed for scalable business automation workflows with reliability, approval control, and operational monitoring.
